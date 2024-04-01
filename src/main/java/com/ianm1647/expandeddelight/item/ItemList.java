@@ -1,6 +1,5 @@
 package com.ianm1647.expandeddelight.item;
 
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.minecraft.item.Item;
 
 public class ItemList {

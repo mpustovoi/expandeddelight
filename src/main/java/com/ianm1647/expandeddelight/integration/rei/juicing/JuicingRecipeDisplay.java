@@ -28,7 +28,7 @@ public class JuicingRecipeDisplay extends BasicDisplay {
     }
 
     public List<EntryIngredient> getInputEntries() {
-        List<EntryIngredient> inputEntryList = new ArrayList(super.getInputEntries());
+        List<EntryIngredient> inputEntryList = new ArrayList<>(super.getInputEntries());
         inputEntryList.add(this.bottleOutput);
         return ImmutableList.copyOf(inputEntryList);
     }

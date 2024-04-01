@@ -19,7 +19,7 @@ public class BlockEntityRegistry {
         JUICER = entity("juicer", JuicerBlockEntity::new, BlockList.JUICER);
     }
 
-    private static BlockEntityType entity(String name, Factory<? extends BlockEntity> entity, Block block) {
+    private static <T extends BlockEntity> BlockEntityType<T> entity(String name, Factory<T> entity, Block block) {
         return Registry.register(Registries.BLOCK_ENTITY_TYPE, new Identifier(ExpandedDelight.MODID, name),
                 FabricBlockEntityTypeBuilder.create(entity, block).build(null));
     }
