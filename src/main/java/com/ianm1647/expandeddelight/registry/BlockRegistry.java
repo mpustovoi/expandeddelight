@@ -7,11 +7,11 @@ import com.ianm1647.expandeddelight.block.custom.DelightCropBlock;
 import com.ianm1647.expandeddelight.block.custom.JuicerBlock;
 import com.ianm1647.expandeddelight.block.custom.MortarPestleBlock;
 import com.ianm1647.expandeddelight.world.feature.tree.CinnamonSaplingGenerator;
-import com.nhoryzon.mc.farmersdelight.block.WildPatchBlock;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -19,6 +19,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
+import vectorwing.farmersdelight.common.block.WildCropBlock;
 
 public class BlockRegistry {
 
@@ -42,14 +43,15 @@ public class BlockRegistry {
                 new Block(blockSettings(2.0f, 3.0f, BlockSoundGroup.WOOD)));
 
         //crops
+        //TODO: Fix status effects
         BlockList.WILD_ASPARAGUS = block("wild_asparagus",
-                new WildPatchBlock());
+                new WildCropBlock(StatusEffects.ABSORPTION, 0, FabricBlockSettings.copyOf(Blocks.TALL_GRASS)));
         BlockList.WILD_SWEET_POTATO = block("wild_sweet_potatoes",
-                new WildPatchBlock());
+                new WildCropBlock(StatusEffects.ABSORPTION, 0, FabricBlockSettings.copyOf(Blocks.TALL_GRASS)));
         BlockList.WILD_CHILI_PEPPER = block("wild_chili_pepper",
-                new WildPatchBlock());
+                new WildCropBlock(StatusEffects.ABSORPTION, 0, FabricBlockSettings.copyOf(Blocks.TALL_GRASS)));
         BlockList.WILD_PEANUTS = block("wild_peanuts",
-                new WildPatchBlock());
+                new WildCropBlock(StatusEffects.ABSORPTION, 0, FabricBlockSettings.copyOf(Blocks.TALL_GRASS)));
 
         //ExpandedDelight.LOGGER.info("ExpandedDelight blocks loaded");
     }
