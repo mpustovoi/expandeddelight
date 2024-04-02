@@ -21,7 +21,7 @@ public class ModWorldGenerator extends FabricDynamicRegistryProvider {
 
     @Override
     public String getName() {
-        return ExpandedDelight.MODID;
+        return ExpandedDelight.MODID + " World Generator";
     }
 }
 

@@ -32,17 +32,16 @@ public class ModPlacedFeatures {
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(1, 0.025f, 1), BlockList.CINNAMON_SAPLING));
 
         register(context, SALT_ORE_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.SALT_ORE),
-                ModOreFeature.modifiersWithCount(6,
-                        HeightRangePlacementModifier.uniform(YOffset.fixed(-20), YOffset.fixed(60))));
+                ModOreFeature.modifiersWithCount(6, HeightRangePlacementModifier.uniform(YOffset.fixed(-20), YOffset.fixed(60))));
 
         register(context, WILD_ASPARAGUS_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.WILD_ASPARAGUS),
-                RarityFilterPlacementModifier.of(12), SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
+                List.of(RarityFilterPlacementModifier.of(12), SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of()));
         register(context, WILD_SWEET_POTATO_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.WILD_SWEET_POTATO),
-                RarityFilterPlacementModifier.of(12), SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
+                List.of(RarityFilterPlacementModifier.of(12), SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of()));
         register(context, WILD_CHILI_PEPPER_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.WILD_CHILI_PEPPER),
-                RarityFilterPlacementModifier.of(12), SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
+                List.of(RarityFilterPlacementModifier.of(12), SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of()));
         register(context, WILD_PEANUTS_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.WILD_PEANUTS),
-                RarityFilterPlacementModifier.of(12), SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
+                List.of(RarityFilterPlacementModifier.of(12), SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of()));
 
     }
 
@@ -50,14 +49,7 @@ public class ModPlacedFeatures {
         return RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(ExpandedDelight.MODID, name));
     }
 
-    private static void register(Registerable<PlacedFeature> context, RegistryKey<PlacedFeature> key, RegistryEntry<ConfiguredFeature<?, ?>> configuration,
-                                 List<PlacementModifier> modifiers) {
-        context.register(key, new PlacedFeature(configuration, List.copyOf(modifiers)));
-    }
-
-    private static <FC extends FeatureConfig, F extends Feature<FC>> void register(Registerable<PlacedFeature> context, RegistryKey<PlacedFeature> key,
-                                                                                   RegistryEntry<ConfiguredFeature<?, ?>> configuration,
-                                                                                   PlacementModifier... modifiers) {
-        register(context, key, configuration, List.of(modifiers));
+    private static void register(Registerable<PlacedFeature> context, RegistryKey<PlacedFeature> key, RegistryEntry<ConfiguredFeature<?, ?>> configuration, List<PlacementModifier> modifiers) {
+        context.register(key, new PlacedFeature(configuration, modifiers));
     }
 }

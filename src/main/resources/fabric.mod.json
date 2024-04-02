@@ -8,8 +8,8 @@
     "ianm1647"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/ianm1647/expandeddelight"
+    "sources": "https://github.com/ianm1647/expandeddelight",
+    "issues": "https://github.com/ianm1647/expandeddelight/issues"
   },
   "license": "MIT",
   "icon": "assets/expandeddelight/logo.png",
@@ -30,10 +30,9 @@
   },
 
   "depends": {
-    "fabricloader": ">=0.14.21",
-    "fabric": "*",
+    "fabricloader": ">=0.14",
+    "fabric-api": "*",
     "minecraft": "~1.20",
-    "java": ">=17",
     "farmersdelight": "*"
   }
 }
