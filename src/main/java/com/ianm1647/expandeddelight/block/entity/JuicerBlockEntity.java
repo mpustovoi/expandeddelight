@@ -15,7 +15,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.recipe.RecipeType;
-import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
@@ -99,11 +98,9 @@ public class JuicerBlockEntity extends BlockEntity implements NamedScreenHandler
         } else {
             entity.resetProgress();
         }
-        boolean dirty = false;
         if (!entity.getStack(3).isEmpty()) {
             if (!entity.getStack(2).isEmpty()) {
                 entity.useStoredBottleOnJuice();
-                dirty = true;
             }
         }
     }

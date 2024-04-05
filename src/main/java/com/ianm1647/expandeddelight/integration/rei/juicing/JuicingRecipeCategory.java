@@ -20,7 +20,6 @@ import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 @Environment(EnvType.CLIENT)
@@ -44,7 +43,7 @@ public class JuicingRecipeCategory implements DisplayCategory<JuicingRecipeDispl
 
     public List<Widget> setupDisplay(JuicingRecipeDisplay display, Rectangle bounds) {
         Point origin = bounds.getLocation();
-        List<Widget> widgets = new ArrayList();
+        List<Widget> widgets = new ArrayList<>();
         widgets.add(Widgets.createRecipeBase(new Rectangle(origin.x - 10, origin.y, 160, 85)));
         Rectangle bgBounds = new Rectangle(origin.x - 5, origin.y + 5, 150, 75);
         widgets.add(Widgets.createTexturedWidget(GUI_TEXTURE, bgBounds, 10f, 4f));
@@ -53,7 +52,7 @@ public class JuicingRecipeCategory implements DisplayCategory<JuicingRecipeDispl
         if (ingredientEntries != null) {
             for(int i = 0; i < ingredientEntries.size(); ++i) {
                 Point slotLoc = new Point(bgBounds.x + 38 + i / 3 * 18, bgBounds.y + 21 + i % 3 * 18);
-                widgets.add(Widgets.createSlot(slotLoc).entries((Collection)ingredientEntries.get(i)).markInput().disableBackground());
+                widgets.add(Widgets.createSlot(slotLoc).entries(ingredientEntries.get(i)).markInput().disableBackground());
             }
         }
 
@@ -61,13 +60,13 @@ public class JuicingRecipeCategory implements DisplayCategory<JuicingRecipeDispl
                 .entries(display.getContainerOutput()).markInput().disableBackground());
 
         widgets.add(Widgets.createSlot(new Point(bgBounds.x + 106, bgBounds.y + 31))
-                .entries((Collection)display.getOutputEntries().get(0)).markOutput().disableBackground());
+                .entries(display.getOutputEntries().get(0)).markOutput().disableBackground());
 
         widgets.add(Widgets.createSlot(new Point(bgBounds.x + 106, bgBounds.y + 56))
-                .entries((Collection)display.getOutputEntries().get(0)).markOutput().disableBackground());
+                .entries(display.getOutputEntries().get(0)).markOutput().disableBackground());
 
         Arrow cookArrow = Widgets.createArrow(new Point(bgBounds.x + 68, bgBounds.y + 31))
-                .animationDurationTicks((double)display.getCookTime());
+                .animationDurationTicks(display.getCookTime());
 
         widgets.add(cookArrow);
 

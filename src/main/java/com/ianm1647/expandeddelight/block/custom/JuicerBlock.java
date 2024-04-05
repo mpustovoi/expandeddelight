@@ -138,8 +138,8 @@ public class JuicerBlock extends BlockWithEntity implements BlockEntityProvider{
     public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
         if (state.getBlock() != newState.getBlock()) {
             BlockEntity blockEntity = world.getBlockEntity(pos);
-            if (blockEntity instanceof JuicerBlockEntity) {
-                ItemScatterer.spawn(world, pos, ((JuicerBlockEntity) blockEntity).getDroppableInventory());
+            if (blockEntity instanceof JuicerBlockEntity juicerBlockEntity) {
+                ItemScatterer.spawn(world, pos, juicerBlockEntity.getDroppableInventory());
                 world.updateComparators(pos,this);
             }
             super.onStateReplaced(state, world, pos, newState, moved);
@@ -150,8 +150,7 @@ public class JuicerBlock extends BlockWithEntity implements BlockEntityProvider{
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         if (!world.isClient) {
             BlockEntity blockEntity = world.getBlockEntity(pos);
-            if (blockEntity instanceof JuicerBlockEntity) {
-                JuicerBlockEntity juicerBlockEntity = (JuicerBlockEntity) blockEntity;
+            if (blockEntity instanceof JuicerBlockEntity juicerBlockEntity) {
                 ItemStack stack = juicerBlockEntity.useBottleOnJuice(player.getStackInHand(hand));
                 if (stack != ItemStack.EMPTY) {
                     if (!player.getInventory().insertStack(stack)) {
