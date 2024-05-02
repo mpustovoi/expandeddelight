@@ -14,5 +14,6 @@
   "container": {
     "item": "expandeddelight:glass_jar"
   },
-  "cookingtime": 200
+  "cookingtime": 200,
+  "experience": 1.0
 }
