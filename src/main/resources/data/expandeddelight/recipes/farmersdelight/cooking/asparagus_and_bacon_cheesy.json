@@ -7,7 +7,7 @@
       }
     ],
     {
-      "tag": "c:crops/asparagus"
+      "tag": "c:foods/vegetables/asparagus"
     },
     {
       "tag": "c:crops/onion"
@@ -22,5 +22,6 @@
   "container": {
     "item": "minecraft:bowl"
   },
-  "cookingtime": 200
+  "cookingtime": 200,
+  "experience": 1.0
 }

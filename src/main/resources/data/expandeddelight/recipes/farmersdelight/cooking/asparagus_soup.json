@@ -5,7 +5,7 @@
       "item": "minecraft:water_bucket"
     },
     {
-      "tag": "c:crops/asparagus"
+      "tag": "c:foods/vegetables/asparagus"
     },
     {
       "tag": "c:salad_ingredients"
@@ -17,5 +17,6 @@
   "container": {
     "item": "minecraft:bowl"
   },
-  "cookingtime": 200
+  "cookingtime": 200,
+  "experience": 1.0
 }

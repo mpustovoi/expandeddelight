@@ -8,7 +8,7 @@
       "tag": "c:cheese"
     },
     {
-      "tag": "c:pasta"
+      "tag": "c:foods/pastas"
     },
     {
       "tag": "c:salt_dusts"
@@ -20,5 +20,6 @@
   "container": {
     "item": "minecraft:bowl"
   },
-  "cookingtime": 200
+  "cookingtime": 200,
+  "experience": 1.0
 }
