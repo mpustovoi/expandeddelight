@@ -1,0 +1,10 @@
+// 1.21	2024-07-24T18:07:47.96087	Tags for minecraft:block mod id expandeddelight
+eb14052d230ce2f764e835a62d971349ad187c32 data/expandeddelight/tags/block/milk_activators.json
+136291a83968b5dbd6f80f31a1d9b5fb2bcb0dd2 data/farmersdelight/tags/block/wild_crops.json
+3027a755003d8425ca0446b991fc6e6856d9f455 data/minecraft/tags/block/crops.json
+ef0b31273746940bee03be74fe08d27986ca26eb data/minecraft/tags/block/mineable/axe.json
+2798de55c220062b15c3104e638a2ea8f14c5f17 data/minecraft/tags/block/mineable/pickaxe.json
+136291a83968b5dbd6f80f31a1d9b5fb2bcb0dd2 data/minecraft/tags/block/small_flowers.json
+34be100efd0fde155ba6bfbd4c2d412af5f69041 data/sereneseasons/tags/block/autumn_crops.json
+5a52e3fb5464d497f2ae273f9ef87f8b206f02a0 data/sereneseasons/tags/block/spring_crops.json
+0b264324863e219f19fd73276f5c09cd5c6bd4c2 data/sereneseasons/tags/block/summer_crops.json

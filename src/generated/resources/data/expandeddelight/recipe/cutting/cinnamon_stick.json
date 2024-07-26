@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "expandeddelight:cinnamon_stick"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 2,
+        "id": "expandeddelight:cinnamon"
+      }
+    }
+  ],
+  "tool": {
+    "item": "expandeddelight:crushing_mallet"
+  }
+}

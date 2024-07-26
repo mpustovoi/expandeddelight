@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "minecraft:plains",
+  "features": "expandeddelight:patch_wild_asparagus",
+  "step": "vegetal_decoration"
+}

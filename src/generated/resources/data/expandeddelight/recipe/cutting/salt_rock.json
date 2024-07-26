@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "expandeddelight:salt_rock"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 2,
+        "id": "expandeddelight:salt"
+      }
+    }
+  ],
+  "tool": {
+    "item": "expandeddelight:crushing_mallet"
+  }
+}
