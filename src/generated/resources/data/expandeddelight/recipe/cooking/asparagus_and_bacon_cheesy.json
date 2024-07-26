@@ -7,16 +7,16 @@
   "experience": 1.2,
   "ingredients": [
     {
-      "tag": "forge:raw_bacon"
+      "tag": "c:foods/raw_bacon"
     },
     {
-      "tag": "forge:crops/asparagus"
+      "tag": "c:crops/asparagus"
     },
     {
-      "tag": "forge:crops/onion"
+      "tag": "c:crops/onion"
     },
     {
-      "tag": "forge:cheese"
+      "tag": "c:foods/cheese"
     }
   ],
   "recipe_book_tab": "meals",

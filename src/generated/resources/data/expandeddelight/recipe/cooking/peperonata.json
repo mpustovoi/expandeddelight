@@ -7,19 +7,19 @@
   "experience": 1.3,
   "ingredients": [
     {
-      "tag": "forge:vegetables"
+      "tag": "c:foods/vegetable"
     },
     {
-      "tag": "forge:crops/chili_pepper"
+      "tag": "c:crops/chili_pepper"
     },
     {
-      "tag": "forge:crops/onion"
+      "tag": "c:crops/onion"
     },
     {
-      "tag": "forge:crops/tomato"
+      "tag": "c:crops/tomato"
     },
     {
-      "tag": "forge:pasta"
+      "tag": "c:foods/pasta"
     }
   ],
   "recipe_book_tab": "meals",

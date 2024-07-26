@@ -3,16 +3,16 @@
   "category": "misc",
   "ingredients": [
     {
-      "tag": "forge:salad_ingredients"
+      "tag": "c:foods/leafy_green"
     },
     {
-      "tag": "forge:crops/onion"
+      "tag": "c:crops/onion"
     },
     {
-      "tag": "forge:crops/sweet_potato"
+      "tag": "c:crops/sweet_potato"
     },
     {
-      "tag": "forge:dusts/cinnamon"
+      "tag": "c:dusts/cinnamon"
     },
     {
       "item": "minecraft:bowl"

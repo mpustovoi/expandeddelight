@@ -6,7 +6,7 @@
       "item": "minecraft:cocoa_beans"
     },
     "w": {
-      "tag": "forge:grain/wheat"
+      "tag": "c:crops/grain"
     }
   },
   "pattern": [

@@ -7,16 +7,16 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "tag": "forge:milk"
+      "tag": "c:foods/milk"
     },
     {
-      "tag": "forge:cheese"
+      "tag": "c:foods/cheese"
     },
     {
-      "tag": "forge:pasta"
+      "tag": "c:foods/pasta"
     },
     {
-      "tag": "forge:dusts/salt"
+      "tag": "c:dusts/salt"
     }
   ],
   "recipe_book_tab": "meals",

@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "c": {
-      "tag": "forge:grain/wheat"
+      "tag": "c:crops/wheat"
     },
     "w": {
       "item": "minecraft:sugar"

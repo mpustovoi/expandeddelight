@@ -1,7 +1,7 @@
 package ianm1647.expandeddelight.data.recipe;
 
 import ianm1647.expandeddelight.common.registry.EDItems;
-import ianm1647.expandeddelight.common.tag.EDForgeTags;
+import ianm1647.expandeddelight.common.tag.EDCommonTags;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
@@ -11,7 +11,7 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.Tags;
-import vectorwing.farmersdelight.common.tag.ForgeTags;
+import vectorwing.farmersdelight.common.tag.CommonTags;
 
 public class CraftingRecipes {
 
@@ -33,7 +33,7 @@ public class CraftingRecipes {
     }
 
     private static void recipesTools(RecipeOutput output) {
-
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, EDItems.CRUSHING_MALLET.get(), 1).pattern("  s").pattern(" S ").pattern("s  ").define('s', Items.STICK).define('S', Items.COBBLESTONE).unlockedBy("has_cobblestone", InventoryChangeTrigger.TriggerInstance.hasItems(Items.COBBLESTONE)).save(output);
     }
 
     private static void recipesMaterials(RecipeOutput output) {
@@ -46,23 +46,23 @@ public class CraftingRecipes {
     }
 
     private static void recipesFoodstuffs(RecipeOutput output) {
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, EDItems.SWEET_ROLL.get()).requires(ForgeTags.MILK).requires(ForgeTags.DOUGH).requires(EDForgeTags.DUSTS_CINNAMON).requires(Items.SUGAR).unlockedBy("has_cinnamon", InventoryChangeTrigger.TriggerInstance.hasItems(EDItems.CINNAMON.get())).save(output);
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, EDItems.BERRY_SWEET_ROLL.get()).requires(ForgeTags.MILK).requires(ForgeTags.DOUGH).requires(EDForgeTags.DUSTS_CINNAMON).requires(Items.SUGAR).requires(Items.SWEET_BERRIES).unlockedBy("has_berries", InventoryChangeTrigger.TriggerInstance.hasItems(Items.SWEET_BERRIES)).save(output);
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, EDItems.GLOW_BERRY_SWEET_ROLL.get()).requires(ForgeTags.MILK).requires(ForgeTags.DOUGH).requires(EDForgeTags.DUSTS_CINNAMON).requires(Items.SUGAR).requires(Items.GLOW_BERRIES).unlockedBy("has_berries", InventoryChangeTrigger.TriggerInstance.hasItems(Items.GLOW_BERRIES)).save(output);
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, EDItems.CHEESE_SANDWICH.get()).requires(Items.BREAD).requires(EDForgeTags.CHEESE).unlockedBy("has_cheese", InventoryChangeTrigger.TriggerInstance.hasItems(EDItems.CHEESE_SLICE.get())).save(output);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, EDItems.SWEET_ROLL.get()).requires(CommonTags.FOODS_MILK).requires(CommonTags.FOODS_DOUGH).requires(EDCommonTags.DUSTS_CINNAMON).requires(Items.SUGAR).unlockedBy("has_cinnamon", InventoryChangeTrigger.TriggerInstance.hasItems(EDItems.CINNAMON.get())).save(output);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, EDItems.BERRY_SWEET_ROLL.get()).requires(CommonTags.FOODS_MILK).requires(CommonTags.FOODS_DOUGH).requires(EDCommonTags.DUSTS_CINNAMON).requires(Items.SUGAR).requires(Items.SWEET_BERRIES).unlockedBy("has_berries", InventoryChangeTrigger.TriggerInstance.hasItems(Items.SWEET_BERRIES)).save(output);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, EDItems.GLOW_BERRY_SWEET_ROLL.get()).requires(CommonTags.FOODS_MILK).requires(CommonTags.FOODS_DOUGH).requires(EDCommonTags.DUSTS_CINNAMON).requires(Items.SUGAR).requires(Items.GLOW_BERRIES).unlockedBy("has_berries", InventoryChangeTrigger.TriggerInstance.hasItems(Items.GLOW_BERRIES)).save(output);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, EDItems.CHEESE_SANDWICH.get()).requires(Items.BREAD).requires(EDCommonTags.FOODS_CHEESE).unlockedBy("has_cheese", InventoryChangeTrigger.TriggerInstance.hasItems(EDItems.CHEESE_SLICE.get())).save(output);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, EDItems.PEANUT_BUTTER_SANDWICH.get()).requires(Items.BREAD).requires(EDItems.PEANUT_BUTTER.get()).unlockedBy("has_peanut_butter", InventoryChangeTrigger.TriggerInstance.hasItems(EDItems.PEANUT_BUTTER.get())).save(output);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, EDItems.PEANUT_BUTTER_HONEY_SANDWICH.get()).requires(Items.BREAD).requires(EDItems.PEANUT_BUTTER.get()).requires(Items.HONEY_BOTTLE).unlockedBy("has_honey", InventoryChangeTrigger.TriggerInstance.hasItems(Items.HONEY_BOTTLE)).save(output);
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, EDItems.SWEET_BERRY_JELLY_SANDWICH.get()).requires(Items.BREAD).requires(EDItems.PEANUT_BUTTER.get()).requires(EDForgeTags.JAMS_SWEET_BERRY).unlockedBy("has_jelly", InventoryChangeTrigger.TriggerInstance.hasItems(EDItems.SWEET_BERRY_JELLY.get())).save(output);
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, EDItems.GLOW_BERRY_JELLY_SANDWICH.get()).requires(Items.BREAD).requires(EDItems.PEANUT_BUTTER.get()).requires(EDForgeTags.JAMS_GLOW_BERRY).unlockedBy("has_jelly", InventoryChangeTrigger.TriggerInstance.hasItems(EDItems.GLOW_BERRY_JELLY.get())).save(output);
-        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, EDItems.CHOCOLATE_COOKIE.get(), 8).pattern("cwc").define('c', Items.COCOA_BEANS).define('w', ForgeTags.GRAIN_WHEAT).unlockedBy("has_cocoa", InventoryChangeTrigger.TriggerInstance.hasItems(Items.COCOA_BEANS)).save(output);
-        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, EDItems.SUGAR_COOKIE.get(), 8).pattern("cwc").define('w', Items.SUGAR).define('c', ForgeTags.GRAIN_WHEAT).unlockedBy("has_sugar", InventoryChangeTrigger.TriggerInstance.hasItems(Items.SUGAR)).save(output);
-        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, EDItems.SNICKERDOODLE.get(), 8).pattern("cwc").define('w', EDItems.CINNAMON.get()).define('c', ForgeTags.GRAIN_WHEAT).unlockedBy("has_cinnamon", InventoryChangeTrigger.TriggerInstance.hasItems(EDItems.CINNAMON.get())).save(output);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, EDItems.SWEET_BERRY_JELLY_SANDWICH.get()).requires(Items.BREAD).requires(EDItems.PEANUT_BUTTER.get()).requires(EDCommonTags.JAMS_SWEET_BERRY).unlockedBy("has_jelly", InventoryChangeTrigger.TriggerInstance.hasItems(EDItems.SWEET_BERRY_JELLY.get())).save(output);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, EDItems.GLOW_BERRY_JELLY_SANDWICH.get()).requires(Items.BREAD).requires(EDItems.PEANUT_BUTTER.get()).requires(EDCommonTags.JAMS_GLOW_BERRY).unlockedBy("has_jelly", InventoryChangeTrigger.TriggerInstance.hasItems(EDItems.GLOW_BERRY_JELLY.get())).save(output);
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, EDItems.CHOCOLATE_COOKIE.get(), 8).pattern("cwc").define('c', Items.COCOA_BEANS).define('w', CommonTags.CROPS_GRAIN).unlockedBy("has_cocoa", InventoryChangeTrigger.TriggerInstance.hasItems(Items.COCOA_BEANS)).save(output);
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, EDItems.SUGAR_COOKIE.get(), 8).pattern("cwc").define('w', Items.SUGAR).define('c', Tags.Items.CROPS_WHEAT).unlockedBy("has_sugar", InventoryChangeTrigger.TriggerInstance.hasItems(Items.SUGAR)).save(output);
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, EDItems.SNICKERDOODLE.get(), 8).pattern("cwc").define('w', EDItems.CINNAMON.get()).define('c', Tags.Items.CROPS_WHEAT).unlockedBy("has_cinnamon", InventoryChangeTrigger.TriggerInstance.hasItems(EDItems.CINNAMON.get())).save(output);
 
     }
 
     private static void recipesCraftedMeals(RecipeOutput output) {
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, EDItems.PEANUT_SALAD.get()).requires(ForgeTags.SALAD_INGREDIENTS).requires(ForgeTags.CROPS_TOMATO).requires(EDForgeTags.CROPS_PEANUT).requires(Items.BOWL).unlockedBy("has_peanut", InventoryChangeTrigger.TriggerInstance.hasItems(EDItems.PEANUT.get())).save(output);
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, EDItems.SWEET_POTATO_SALAD.get()).requires(ForgeTags.SALAD_INGREDIENTS).requires(ForgeTags.CROPS_ONION).requires(EDForgeTags.CROPS_SWEET_POTATO).requires(EDForgeTags.DUSTS_CINNAMON).requires(Items.BOWL).unlockedBy("has_sweet_potato", InventoryChangeTrigger.TriggerInstance.hasItems(EDItems.SWEET_POTATO.get())).save(output);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, EDItems.PEANUT_SALAD.get()).requires(CommonTags.FOODS_LEAFY_GREEN).requires(CommonTags.CROPS_TOMATO).requires(EDCommonTags.CROPS_PEANUT).requires(Items.BOWL).unlockedBy("has_peanut", InventoryChangeTrigger.TriggerInstance.hasItems(EDItems.PEANUT.get())).save(output);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, EDItems.SWEET_POTATO_SALAD.get()).requires(CommonTags.FOODS_LEAFY_GREEN).requires(CommonTags.CROPS_ONION).requires(EDCommonTags.CROPS_SWEET_POTATO).requires(EDCommonTags.DUSTS_CINNAMON).requires(Items.BOWL).unlockedBy("has_sweet_potato", InventoryChangeTrigger.TriggerInstance.hasItems(EDItems.SWEET_POTATO.get())).save(output);
 
     }
 }

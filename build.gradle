@@ -72,19 +72,16 @@ configurations {
 }
 
 repositories {
-    flatDir {
-        dir 'src/main/resources/META-INF/jar'
-    }
     maven {
         name = "BlameJared"
         url = "https://maven.blamejared.com"
     }
-    maven { url "https://maven.ryanliptak.com/" }
+    maven { url = "https://maven.ryanliptak.com/" }
+    maven { url = "https://api.modrinth.com/maven" }
 }
 
 dependencies {
-    implementation "vectorwing.farmersdelight:farmersdelight"
-    //implementation "maven.modrinth:farmers-delight:${project.delight_version}"
+    implementation "maven.modrinth:farmers-delight:${project.delight_version}"
 
     compileOnly "squeek.appleskin:appleskin-neoforge:${appleskin_version}:api"
     runtimeOnly "squeek.appleskin:appleskin-neoforge:${appleskin_version}"

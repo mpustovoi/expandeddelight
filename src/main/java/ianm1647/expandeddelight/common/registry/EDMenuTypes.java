@@ -2,7 +2,6 @@ package ianm1647.expandeddelight.common.registry;
 
 import ianm1647.expandeddelight.ExpandedDelight;
 import ianm1647.expandeddelight.common.block.entity.container.JuicerMenu;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.inventory.MenuType;
 import net.neoforged.neoforge.common.extensions.IMenuTypeExtension;

@@ -4,16 +4,8 @@ import ianm1647.expandeddelight.client.recipebook.JuicerRecipeBookTab;
 import ianm1647.expandeddelight.common.registry.EDItems;
 import ianm1647.expandeddelight.data.builder.JuicerRecipeBuilder;
 import net.minecraft.data.recipes.RecipeOutput;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.block.Blocks;
-import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
 import vectorwing.farmersdelight.common.registry.ModItems;
-import vectorwing.farmersdelight.common.tag.ForgeTags;
-import vectorwing.farmersdelight.common.tag.ModTags;
-import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
 
 import java.util.stream.Stream;
 

@@ -8,13 +8,13 @@
   "experience": 0.35,
   "ingredients": [
     {
-      "tag": "forge:crops/peanut"
+      "tag": "c:crops/peanut"
     },
     {
-      "tag": "forge:crops/peanut"
+      "tag": "c:crops/peanut"
     },
     {
-      "tag": "forge:milk"
+      "tag": "c:foods/milk"
     }
   ],
   "recipe_book_tab": "misc",

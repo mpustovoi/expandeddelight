@@ -30,6 +30,6 @@ enumExtensions="META-INF/enumextensions.json"
 [[dependencies.${mod_id}]]
     modId="farmersdelight"
     type="required"
-    versionRange="${delight_version}"
+    versionRange="1.21-1.2.4"
     ordering="NONE"
     side="BOTH"
