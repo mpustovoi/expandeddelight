@@ -97,7 +97,7 @@ public class EDItemTags extends ItemTagsProvider {
     }
 
     public void registerCompatibilityTags() {
-        tag(EDCompatTags.CREATE_UPRIGHT_ON_BELT).add(EDItems.APPLE_JUICE.get());
+        tag(EDCompatTags.CREATE_UPRIGHT_ON_BELT).add(EDItems.GLASS_JAR.get(), EDItems.APPLE_JUICE.get(), EDItems.SWEET_BERRY_JUICE.get(), EDItems.GLOW_BERRY_JUICE.get(), EDItems.GLOW_BERRY_JELLY.get(), EDItems.SWEET_BERRY_JELLY.get());
         tag(EDCompatTags.SUPP_COOKIES).add(EDItems.CHOCOLATE_COOKIE.get(), EDItems.SUGAR_COOKIE.get(), EDItems.SNICKERDOODLE.get());
         tag(EDCompatTags.TAN_DRINKS).add(EDItems.APPLE_JUICE.get(), EDItems.SWEET_BERRY_JUICE.get(), EDItems.GLOW_BERRY_JUICE.get());
         tag(EDCompatTags.SERENE_SEASONS_AUTUMN_CROPS).add(EDItems.SWEET_POTATO.get());

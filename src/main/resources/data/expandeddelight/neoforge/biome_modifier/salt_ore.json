@@ -1,6 +1,6 @@
 {
   "type": "neoforge:add_features",
-  "biomes": "#minecraft:is_ocean",
+  "biomes": "#c:is_ocean",
   "features": "expandeddelight:salt_ore",
   "step": "underground_ores"
 }
