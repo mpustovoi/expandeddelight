@@ -73,17 +73,24 @@
 
   "block.expandeddelight.juicer": "Juicer",
   "block.expandeddelight.cask": "Cask",
+  "block.expandeddelight.milk_cask": "Milk Cask",
+  "block.expandeddelight.cheese_cask": "Cheese Cask",
 
   "container.expandeddelight.juicer": "Juicer",
 
   "expandeddelight.container.juicer": "Juicer",
   "expandeddelight.container.recipe_book.juiceable": "Showing Juiceable",
   "expandeddelight.jei.juicing": "Juicing",
+  "expandeddelight.jei.cheese_fermenting": "Cheese Fermenting",
+  "expandeddelight.jei.cheese_fermenting.light": "Sped up by darkness",
+  "expandeddelight.jei.cheese_fermenting.fluid": "Sped up by adjacent water",
+  "expandeddelight.jei.cheese_fermenting.accelerators": "Sped up by adjacent activators (see below)",
 
   "itemGroup.expandeddelight": "Expanded Delight",
 
   "expandeddelight.jei.info.wild_asparagus": "Asparagus can be commonly found as a wild plant in plains.",
   "expandeddelight.jei.info.wild_sweet_potato": "Sweet potatoes can be commonly found as a wild plant in jungles.",
   "expandeddelight.jei.info.wild_chili_pepper": "Chili peppers can be commonly found as a wild plant in deserts.",
-  "expandeddelight.jei.info.wild_peanuts": "Peanuts can be commonly found as a wild plant in savannas."
+  "expandeddelight.jei.info.wild_peanuts": "Peanuts can be commonly found as a wild plant in savannas.",
+  "expandeddelight.jei.info.salt_ore": "Salt Ore can be commonly found underground specifically in ocean biomes."
 }

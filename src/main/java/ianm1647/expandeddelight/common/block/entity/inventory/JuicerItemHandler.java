@@ -35,18 +35,18 @@ public class JuicerItemHandler implements IItemHandler {
     @Nonnull
     public ItemStack insertItem(int slot, @Nonnull ItemStack stack, boolean simulate) {
         if (this.side != null && !this.side.equals(Direction.UP)) {
-            return slot == 7 ? this.itemHandler.insertItem(slot, stack, simulate) : stack;
+            return slot == 3 ? this.itemHandler.insertItem(slot, stack, simulate) : stack;
         } else {
-            return slot < 6 ? this.itemHandler.insertItem(slot, stack, simulate) : stack;
+            return slot < 2 ? this.itemHandler.insertItem(slot, stack, simulate) : stack;
         }
     }
 
     @Nonnull
     public ItemStack extractItem(int slot, int amount, boolean simulate) {
         if (this.side != null && !this.side.equals(Direction.UP)) {
-            return slot == 8 ? this.itemHandler.extractItem(slot, amount, simulate) : ItemStack.EMPTY;
+            return slot == 4 ? this.itemHandler.extractItem(slot, amount, simulate) : ItemStack.EMPTY;
         } else {
-            return slot < 6 ? this.itemHandler.extractItem(slot, amount, simulate) : ItemStack.EMPTY;
+            return slot < 2 ? this.itemHandler.extractItem(slot, amount, simulate) : ItemStack.EMPTY;
         }
     }
 

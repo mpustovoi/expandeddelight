@@ -13,7 +13,6 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.block.Block;
 import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
@@ -29,6 +28,8 @@ public class EDItems {
 
     public static Supplier<Item> JUICER;
     public static Supplier<Item> CASK;
+    public static Supplier<Item> MILK_CASK;
+    public static Supplier<Item> CHEESE_CASK;
 
     public static Supplier<Item> ASPARAGUS_CRATE;
     public static Supplier<Item> SWEET_POTATO_CRATE;
@@ -59,7 +60,7 @@ public class EDItems {
     public static Supplier<Item> PEANUT;
 
     public static Supplier<Item> LEMON;
-    public static Supplier<Item> RASPBERRY;
+    public static Supplier<Item> CRANBERRIES;
 
     public static Supplier<Item> CHEESE_WHEEL;
     public static Supplier<Item> CHEESE_SLICE;
@@ -81,19 +82,19 @@ public class EDItems {
     public static Supplier<Item> SWEET_BERRY_JUICE;
     public static Supplier<Item> GLOW_BERRY_JUICE;
     public static Supplier<Item> LEMONADE;
-    public static Supplier<Item> RASPBERRY_LEMONADE;
+    public static Supplier<Item> CRANBERRY_LEMONADE;
     public static Supplier<Item> SWEET_BERRY_LEMONADE;
     public static Supplier<Item> GLOW_BERRY_LEMONADE;
 
     public static Supplier<Item> APPLE_JELLY;
     public static Supplier<Item> MELON_JELLY;
-    public static Supplier<Item> RASPBERRY_JELLY;
+    public static Supplier<Item> CRANBERRY_JELLY;
     public static Supplier<Item> SWEET_BERRY_JELLY;
     public static Supplier<Item> GLOW_BERRY_JELLY;
 
     public static Supplier<Item> APPLE_JELLY_SANDWICH;
     public static Supplier<Item> MELON_JELLY_SANDWICH;
-    public static Supplier<Item> RASPBERRY_JELLY_SANDWICH;
+    public static Supplier<Item> CRANBERRY_JELLY_SANDWICH;
     public static Supplier<Item> SWEET_BERRY_JELLY_SANDWICH;
     public static Supplier<Item> GLOW_BERRY_JELLY_SANDWICH;
 
@@ -120,6 +121,8 @@ public class EDItems {
         JUICER = registerWithTab("juicer", () -> new JuicerItem(EDBlocks.JUICER.get(), basicItem()));
         if(!ModList.get().isLoaded("brewinandchewin")) {
             CASK = registerWithTab("cask", () -> new BlockItem(EDBlocks.CASK.get(), basicItem()));
+            MILK_CASK = ITEMS.register("milk_cask", () -> new BlockItem(EDBlocks.MILK_CASK.get(), basicItem()));
+            CHEESE_CASK = ITEMS.register("cheese_cask", () -> new BlockItem(EDBlocks.CHEESE_CASK.get(), basicItem()));
         }
 
         ASPARAGUS_CRATE = registerWithTab("asparagus_crate", () -> new BlockItem(EDBlocks.ASPARAGUS_CRATE.get(), basicItem()));

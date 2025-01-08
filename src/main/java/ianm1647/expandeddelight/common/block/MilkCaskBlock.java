@@ -18,7 +18,7 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import java.util.Iterator;
 
 public class MilkCaskBlock extends Block {
-    public static IntegerProperty FERMENTING = IntegerProperty.create("fermenting", 0, 7);
+    public static IntegerProperty FERMENTING = IntegerProperty.create("cheese_fermenting", 0, 7);
 
     public MilkCaskBlock(BlockBehaviour.Properties properties) {
         super(properties);
@@ -53,7 +53,7 @@ public class MilkCaskBlock extends Block {
                 }
             }
 
-            chance += maxLight > 12 ? 0.1F : 0.05F;
+            chance += maxLight < 5 ? 0.1F : 0.05F;
             chance += hasWater ? 0.1F : 0.0F;
             if (level.getRandom().nextFloat() <= chance) {
                 if (state.getValue(FERMENTING) == this.getMaxFermentingStage()) {
