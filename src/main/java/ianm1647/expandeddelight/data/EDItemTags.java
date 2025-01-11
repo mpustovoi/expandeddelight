@@ -88,8 +88,8 @@ public class EDItemTags extends ItemTagsProvider {
         tag(EDCommonTags.JAMS_SWEET_BERRY).add(EDItems.SWEET_BERRY_JELLY.get());
         tag(EDCommonTags.JAMS_GLOW_BERRY).add(EDItems.GLOW_BERRY_JELLY.get());
         tag(EDCommonTags.JUICES)
+                .addTag(EDCommonTags.JUICES_APPLE)
                 .addTag(EDCommonTags.JUICES_SWEET_BERRY)
-                .addTag(EDCommonTags.JUICES_GLOW_BERRY)
                 .addTag(EDCommonTags.JUICES_GLOW_BERRY);
         tag(EDCommonTags.JUICES_APPLE).add(EDItems.APPLE_JUICE.get());
         tag(EDCommonTags.JUICES_SWEET_BERRY).add(EDItems.SWEET_BERRY_JUICE.get());
