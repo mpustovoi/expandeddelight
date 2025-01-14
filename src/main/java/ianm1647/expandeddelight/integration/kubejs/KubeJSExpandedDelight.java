@@ -16,19 +16,37 @@ public class KubeJSExpandedDelight implements KubeJSPlugin {
     interface JuicingRecipe {
 
         RecipeKey<ItemStack> OUTPUT = ItemStackComponent.ITEM_STACK.key("result", ComponentRole.OUTPUT);
-
         RecipeKey<List<Ingredient>> INPUT = IngredientComponent.INGREDIENT.asList().key("ingredients", ComponentRole.INPUT);
-
         RecipeKey<Double> EXP = NumberComponent.DOUBLE.key("experience", ComponentRole.OTHER).optional(1.0);
-
         RecipeKey<Integer> TIME = NumberComponent.INT.key("juicingtime", ComponentRole.OTHER).optional(200);
-
         RecipeKey<ItemStack> CONTAINER = ItemStackComponent.ITEM_STACK.key("container", ComponentRole.INPUT).optional(ItemStack.EMPTY).allowEmpty();
 
 
+        RecipeSchema SCHEMA = new RecipeSchema(OUTPUT, INPUT, EXP, TIME, CONTAINER);
+
+    }
+
+    interface CookingRecipe {
+
+        RecipeKey<ItemStack> OUTPUT = ItemStackComponent.ITEM_STACK.key("result", ComponentRole.OUTPUT);
+        RecipeKey<List<Ingredient>> INPUT = IngredientComponent.INGREDIENT.asList().key("ingredients", ComponentRole.INPUT);
+        RecipeKey<Double> EXP = NumberComponent.DOUBLE.key("experience", ComponentRole.OTHER).optional(1.0);
+        RecipeKey<Integer> TIME = NumberComponent.INT.key("cookingtime", ComponentRole.OTHER).optional(200);
+        RecipeKey<ItemStack> CONTAINER = ItemStackComponent.ITEM_STACK.key("container", ComponentRole.INPUT).optional(ItemStack.EMPTY).allowEmpty();
 
 
         RecipeSchema SCHEMA = new RecipeSchema(OUTPUT, INPUT, EXP, TIME, CONTAINER);
+
+    }
+
+    interface CuttingRecipe {
+
+        RecipeKey<List<Ingredient>> INPUT = IngredientComponent.INGREDIENT.asList().key("ingredients", ComponentRole.INPUT);
+        RecipeKey<Ingredient> TOOL = IngredientComponent.INGREDIENT.key("tool", ComponentRole.OTHER);
+        RecipeKey<List<ItemStack>> RESULTS = ItemStackComponent.ITEM_STACK.asList().key("result", ComponentRole.OUTPUT);
+        RecipeKey<String> SOUND = StringComponent.ANY.key("sound", ComponentRole.OUTPUT).optional("").allowEmpty();
+
+        RecipeSchema SCHEMA = new RecipeSchema(INPUT, TOOL, RESULTS, SOUND);
 
     }
 
@@ -36,7 +54,7 @@ public class KubeJSExpandedDelight implements KubeJSPlugin {
     public void registerRecipeSchemas(RecipeSchemaRegistry event) {
         event.register(ResourceLocation.fromNamespaceAndPath("expandeddelight", "juicing"), JuicingRecipe.SCHEMA);
 
-        //event.register(ResourceLocation.fromNamespaceAndPath("farmersdelight", "cooking"), CookingRecipe.SCHEMA);
+        event.register(ResourceLocation.fromNamespaceAndPath("farmersdelight", "cooking"), CookingRecipe.SCHEMA);
         //event.register(ResourceLocation.fromNamespaceAndPath("farmersdelight", "cutting"), CuttingRecipe.SCHEMA);
 
     }

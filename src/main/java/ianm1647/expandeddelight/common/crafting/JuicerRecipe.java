@@ -12,10 +12,7 @@ import net.minecraft.core.NonNullList;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.crafting.Recipe;
-import net.minecraft.world.item.crafting.RecipeSerializer;
-import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.common.util.RecipeMatcher;
 import net.neoforged.neoforge.items.wrapper.RecipeWrapper;
@@ -154,11 +151,15 @@ public class JuicerRecipe implements Recipe<RecipeWrapper> {
    }
 
    public static class Serializer implements RecipeSerializer<JuicerRecipe> {
-      private static final MapCodec<JuicerRecipe> CODEC = RecordCodecBuilder.mapCodec((inst) -> inst.group(Codec.STRING.optionalFieldOf("group", "").forGetter(JuicerRecipe::getGroup), JuicerRecipeBookTab.CODEC.optionalFieldOf("recipe_book_tab").xmap((optional) -> optional.orElse((JuicerRecipeBookTab) null), Optional::of).forGetter(JuicerRecipe::getRecipeBookTab), Ingredient.LIST_CODEC_NONEMPTY.fieldOf("ingredients").xmap((ingredients) -> {
+      private static final MapCodec<JuicerRecipe> CODEC = RecordCodecBuilder.mapCodec((inst) -> inst.group(Codec.STRING.optionalFieldOf("group", "").forGetter(JuicerRecipe::getGroup),
+              JuicerRecipeBookTab.CODEC.optionalFieldOf("recipe_book_tab").xmap((optional) -> optional.orElse(JuicerRecipeBookTab.MISC), Optional::of).forGetter(JuicerRecipe::getRecipeBookTab),
+              Ingredient.LIST_CODEC_NONEMPTY.fieldOf("ingredients").xmap((ingredients) -> {
          NonNullList<Ingredient> nonNullList = NonNullList.create();
          nonNullList.addAll(ingredients);
          return nonNullList;
-      }, (ingredients) -> ingredients).forGetter(JuicerRecipe::getIngredients), ItemStack.STRICT_CODEC.fieldOf("result").forGetter((r) -> r.output), ItemStack.STRICT_CODEC.optionalFieldOf("container", ItemStack.EMPTY).forGetter(JuicerRecipe::getContainerOverride), Codec.FLOAT.optionalFieldOf("experience", 0.0F).forGetter(JuicerRecipe::getExperience), Codec.INT.optionalFieldOf("juicingtime", 200).forGetter(JuicerRecipe::getJuiceTime)).apply(inst, JuicerRecipe::new));
+      }, (ingredients) -> ingredients).forGetter(JuicerRecipe::getIngredients), ItemStack.STRICT_CODEC.fieldOf("result").forGetter((r) -> r.output),
+              ItemStack.STRICT_CODEC.optionalFieldOf("container", ItemStack.EMPTY).forGetter(JuicerRecipe::getContainerOverride), Codec.FLOAT.optionalFieldOf("experience", 0.0F)
+                      .forGetter(JuicerRecipe::getExperience), Codec.INT.optionalFieldOf("juicingtime", 200).forGetter(JuicerRecipe::getJuiceTime)).apply(inst, JuicerRecipe::new));
       public static final StreamCodec<RegistryFriendlyByteBuf, JuicerRecipe> STREAM_CODEC = StreamCodec.of(JuicerRecipe.Serializer::toNetwork, JuicerRecipe.Serializer::fromNetwork);
 
       public Serializer() {
