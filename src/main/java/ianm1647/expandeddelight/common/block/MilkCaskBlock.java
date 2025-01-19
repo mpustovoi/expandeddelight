@@ -57,8 +57,14 @@ public class MilkCaskBlock extends Block {
             chance += hasWater ? 0.1F : 0.0F;
             if (level.getRandom().nextFloat() <= chance) {
                 if (state.getValue(FERMENTING) == this.getMaxFermentingStage()) {
-                    level.setBlock(pos, EDBlocks.CHEESE_CASK.get().defaultBlockState(), 3);
-                    level.playSound(null, pos, SoundEvents.SLIME_SQUISH_SMALL, SoundSource.BLOCKS, 1.0F, 1.0F);
+                    if (this == EDBlocks.MILK_CASK.get()) {
+                        level.setBlock(pos, EDBlocks.CHEESE_CASK.get().defaultBlockState(), 3);
+                        level.playSound(null, pos, SoundEvents.SLIME_SQUISH_SMALL, SoundSource.BLOCKS, 1.0F, 1.0F);
+                    }
+                    if (this == EDBlocks.GOAT_MILK_CASK.get()) {
+                        level.setBlock(pos, EDBlocks.GOAT_CHEESE_CASK.get().defaultBlockState(), 3);
+                        level.playSound(null, pos, SoundEvents.SLIME_SQUISH_SMALL, SoundSource.BLOCKS, 1.0F, 1.0F);
+                    }
                 } else {
                     level.setBlock(pos, state.setValue(FERMENTING, state.getValue(FERMENTING) + 1), 3);
                 }

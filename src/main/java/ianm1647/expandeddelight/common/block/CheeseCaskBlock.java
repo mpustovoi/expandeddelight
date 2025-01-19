@@ -21,10 +21,19 @@ public class CheeseCaskBlock extends Block {
 
     @Override
     public InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
-        popResource(level, pos, new ItemStack(EDItems.CHEESE_WHEEL.get(), 2));
-        level.setBlock(pos, EDBlocks.CASK.get().defaultBlockState(), 2);
-        level.playSound(player, pos, SoundEvents.ITEM_FRAME_REMOVE_ITEM, SoundSource.BLOCKS, 1.0F, 1.0F);
-        return InteractionResult.SUCCESS;
+        if (this == EDBlocks.CHEESE_CASK.get()) {
+            popResource(level, pos, new ItemStack(EDItems.CHEESE_WHEEL.get(), 2));
+            level.setBlock(pos, EDBlocks.CASK.get().defaultBlockState(), 2);
+            level.playSound(player, pos, SoundEvents.ITEM_FRAME_REMOVE_ITEM, SoundSource.BLOCKS, 1.0F, 1.0F);
+            return InteractionResult.SUCCESS;
+        }
+        if (this == EDBlocks.GOAT_CHEESE_CASK.get()) {
+            popResource(level, pos, new ItemStack(EDItems.GOAT_CHEESE_WHEEL.get(), 2));
+            level.setBlock(pos, EDBlocks.CASK.get().defaultBlockState(), 2);
+            level.playSound(player, pos, SoundEvents.ITEM_FRAME_REMOVE_ITEM, SoundSource.BLOCKS, 1.0F, 1.0F);
+            return InteractionResult.SUCCESS;
+        }
+        return InteractionResult.PASS;
     }
 
 }

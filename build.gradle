@@ -111,8 +111,8 @@ repositories {
 }
 
 dependencies {
-    //implementation "maven.modrinth:farmers-delight:${delight_version}"
-    implementation files('C:\\Users\\ianmc\\OneDrive\\Documents\\Intellij Workspaces\\Minecraft\\expandeddelight-neoforge\\src\\main\\resources\\META-INF\\jar\\farmersdelight.jar')
+    implementation "maven.modrinth:farmers-delight:${delight_version}"
+    //implementation files('C:\\Users\\ianmc\\OneDrive\\Documents\\Intellij Workspaces\\Minecraft\\expandeddelight-neoforge\\src\\main\\resources\\META-INF\\jar\\farmersdelight.jar')
 
     compileOnly "squeek.appleskin:appleskin-neoforge:${appleskin_version}:api"
     runtimeOnly "squeek.appleskin:appleskin-neoforge:${appleskin_version}"

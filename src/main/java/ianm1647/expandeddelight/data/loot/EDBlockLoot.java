@@ -32,6 +32,23 @@ public class EDBlockLoot extends BlockLootSubProvider {
     }
 
     protected void generate() {
+
+        this.dropSelf(EDBlocks.CINNAMON_SAPLING.get());
+        this.add(EDBlocks.CINNAMON_LEAVES.get(), block ->
+                createLeavesDrops(block, EDBlocks.CINNAMON_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.dropSelf(EDBlocks.CINNAMON_LOG.get());
+        this.dropSelf(EDBlocks.CINNAMON_WOOD.get());
+        this.dropSelf(EDBlocks.CINNAMON_STRIPPED_LOG.get());
+        this.dropSelf(EDBlocks.CINNAMON_STRIPPED_WOOD.get());
+        this.dropSelf(EDBlocks.CINNAMON_PLANKS.get());
+        this.add(EDBlocks.CINNAMON_DOOR.get(), block ->
+                createDoorTable(EDBlocks.CINNAMON_DOOR.get()));
+        this.dropSelf(EDBlocks.CINNAMON_SIGN.get());
+        this.dropSelf(EDBlocks.CINNAMON_WALL_SIGN.get());
+        this.dropSelf(EDBlocks.CINNAMON_CEILING_HANGING_SIGN.get());
+        this.dropSelf(EDBlocks.CINNAMON_WALL_HANGING_SIGN.get());
+        this.dropNamedContainer(EDBlocks.CINNAMON_CABINET.get());
+
         this.add(EDBlocks.JUICER.get(),
                 (block) -> LootTable.lootTable().withPool(this.applyExplosionCondition(block, LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1.0F))
@@ -42,11 +59,15 @@ public class EDBlockLoot extends BlockLootSubProvider {
         this.dropSelf(EDBlocks.CASK.get());
         this.dropOther(EDBlocks.MILK_CASK.get(), EDItems.CASK.get());
         this.dropOther(EDBlocks.CHEESE_CASK.get(), EDItems.CASK.get());
+        this.dropOther(EDBlocks.GOAT_MILK_CASK.get(), EDItems.CASK.get());
+        this.dropOther(EDBlocks.GOAT_CHEESE_CASK.get(), EDItems.CASK.get());
+        this.dropSelf(EDBlocks.GOAT_CHEESE_WHEEL.get());
         this.dropSelf(EDBlocks.CHEESE_WHEEL.get());
 
         this.dropSelf(EDBlocks.ASPARAGUS_CRATE.get());
         this.dropSelf(EDBlocks.SWEET_POTATO_CRATE.get());
         this.dropSelf(EDBlocks.CHILI_PEPPER_CRATE.get());
+        this.dropSelf(EDBlocks.CRANBERRY_BAG.get());
     }
 
     protected void dropNamedContainer(Block block) {

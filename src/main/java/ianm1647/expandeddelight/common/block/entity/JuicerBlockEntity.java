@@ -237,7 +237,7 @@ public class JuicerBlockEntity extends SyncedBlockEntity implements MenuProvider
 
    protected boolean canJuice(JuicerRecipe recipe) {
       if (this.hasInput()) {
-         ItemStack resultStack = recipe.getResultItem(this.level.registryAccess());
+         ItemStack resultStack = recipe.assemble(new RecipeWrapper(this.inventory), this.level.registryAccess());
          if (resultStack.isEmpty()) {
             return false;
          } else {
@@ -268,7 +268,7 @@ public class JuicerBlockEntity extends SyncedBlockEntity implements MenuProvider
          } else {
             this.juiceTime = 0;
             this.containerStack = (recipe.value()).getOutputContainer();
-            ItemStack resultStack = (recipe.value()).getResultItem(this.level.registryAccess());
+            ItemStack resultStack = (recipe.value()).assemble(new RecipeWrapper(this.inventory), this.level.registryAccess());
             ItemStack storedDrinkStack = this.inventory.getStackInSlot(2);
             if (storedDrinkStack.isEmpty()) {
                this.inventory.setStackInSlot(2, resultStack.copy());

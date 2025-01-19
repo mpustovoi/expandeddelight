@@ -1,5 +1,6 @@
 package ianm1647.expandeddelight.data;
 
+import com.google.common.collect.Sets;
 import ianm1647.expandeddelight.ExpandedDelight;
 import ianm1647.expandeddelight.common.block.EDCropBlock;
 import ianm1647.expandeddelight.common.registry.EDBlocks;
@@ -7,8 +8,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.DoublePlantBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
@@ -16,6 +16,8 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.block.state.properties.Property;
 import net.neoforged.neoforge.client.model.generators.*;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.registries.DeferredBlock;
+import org.codehaus.plexus.util.Expand;
 import vectorwing.farmersdelight.common.block.*;
 import vectorwing.farmersdelight.common.registry.ModBlocks;
 
@@ -47,16 +49,50 @@ public class EDBlockStates extends BlockStateProvider {
     }
 
     protected void registerStatesAndModels() {
+
+        this.saplingBlock(EDBlocks.CINNAMON_SAPLING.get());
+        this.leavesBlock(EDBlocks.CINNAMON_LEAVES.get());
+        this.logBlock((RotatedPillarBlock) EDBlocks.CINNAMON_LOG.get());
+        this.axisBlock((RotatedPillarBlock) EDBlocks.CINNAMON_WOOD.get(), blockTexture(EDBlocks.CINNAMON_LOG.get()), blockTexture(EDBlocks.CINNAMON_LOG.get()));
+        this.logBlock((RotatedPillarBlock) EDBlocks.CINNAMON_STRIPPED_LOG.get());
+        this.axisBlock((RotatedPillarBlock) EDBlocks.CINNAMON_STRIPPED_WOOD.get(), blockTexture(EDBlocks.CINNAMON_STRIPPED_LOG.get()), blockTexture(EDBlocks.CINNAMON_STRIPPED_LOG.get()));
+        this.simpleBlock(EDBlocks.CINNAMON_PLANKS.get());
+        this.stairsBlock((StairBlock) EDBlocks.CINNAMON_STAIRS.get(), blockTexture(EDBlocks.CINNAMON_PLANKS.get()));
+        this.slabBlock((SlabBlock) EDBlocks.CINNAMON_SLAB.get(), blockTexture(EDBlocks.CINNAMON_PLANKS.get()), blockTexture(EDBlocks.CINNAMON_PLANKS.get()));
+        this.fenceBlock((FenceBlock) EDBlocks.CINNAMON_FENCE.get(), blockTexture(EDBlocks.CINNAMON_PLANKS.get()));
+        this.fenceGateBlock((FenceGateBlock) EDBlocks.CINNAMON_FENCE_GATE.get(), blockTexture(EDBlocks.CINNAMON_PLANKS.get()));
+        ResourceLocation doorTop = ResourceLocation.fromNamespaceAndPath(ExpandedDelight.MODID, "block/cinnamon_door_top");
+        ResourceLocation doorBottom = ResourceLocation.fromNamespaceAndPath(ExpandedDelight.MODID, "block/cinnamon_door_bottom");
+        this.doorBlockWithRenderType((DoorBlock) EDBlocks.CINNAMON_DOOR.get(), doorBottom, doorTop, "cutout");
+        ResourceLocation trapdoor = ResourceLocation.fromNamespaceAndPath(ExpandedDelight.MODID, "block/cinnamon_trapdoor");
+        this.trapdoorBlockWithRenderType((TrapDoorBlock) EDBlocks.CINNAMON_TRAPDOOR.get(), trapdoor, true, "cutout");
+        this.trapdoorItem(EDBlocks.CINNAMON_TRAPDOOR.get(), "_bottom");
+        this.pressurePlateBlock((PressurePlateBlock) EDBlocks.CINNAMON_PRESSURE_PLATE.get(), blockTexture(EDBlocks.CINNAMON_PLANKS.get()));
+        this.buttonBlock((ButtonBlock) EDBlocks.CINNAMON_BUTTON.get(), blockTexture(EDBlocks.CINNAMON_PLANKS.get()));
+        Set<Block> signs = Sets.newHashSet(EDBlocks.CINNAMON_SIGN.get(), EDBlocks.CINNAMON_WALL_SIGN.get(), EDBlocks.CINNAMON_WALL_HANGING_SIGN.get(), EDBlocks.CINNAMON_CEILING_HANGING_SIGN.get());
+        Iterator var2 = signs.iterator();
+        while(var2.hasNext()) {
+            Block sign = (Block)var2.next();
+            this.simpleBlock(sign, this.existingModel(EDBlocks.CINNAMON_SIGN.get()));
+        }
+        this.cabinetBlock(EDBlocks.CINNAMON_CABINET.get(), "cinnamon");
+
         this.customHorizontalBlock(EDBlocks.JUICER.get(),
                 ($) -> this.existingModel(EDBlocks.JUICER.get()));
         this.simpleBlock(EDBlocks.CASK.get(), this.existingModel(EDBlocks.CASK.get()));
         this.simpleBlock(EDBlocks.MILK_CASK.get(), this.existingModel(EDBlocks.MILK_CASK.get()));
         this.simpleBlock(EDBlocks.CHEESE_CASK.get(), this.existingModel(EDBlocks.CHEESE_CASK.get()));
+        this.simpleBlock(EDBlocks.GOAT_MILK_CASK.get(), this.existingModel(EDBlocks.GOAT_MILK_CASK.get()));
+        this.simpleBlock(EDBlocks.GOAT_CHEESE_CASK.get(), this.existingModel(EDBlocks.GOAT_CHEESE_CASK.get()));
         this.pieBlock(EDBlocks.CHEESE_WHEEL.get());
+        this.pieBlock(EDBlocks.GOAT_CHEESE_WHEEL.get());
+        this.pieBlock(EDBlocks.CRANBERRY_COBBLER.get());
+        this.pieBlock(EDBlocks.HONEYED_GOAT_CHEESE_TART.get());
 
         this.simpleBlock(EDBlocks.ASPARAGUS_CRATE.get(), this.existingModel(EDBlocks.ASPARAGUS_CRATE.get()));
         this.simpleBlock(EDBlocks.SWEET_POTATO_CRATE.get(), this.existingModel(EDBlocks.SWEET_POTATO_CRATE.get()));
         this.simpleBlock(EDBlocks.CHILI_PEPPER_CRATE.get(), this.existingModel(EDBlocks.CHILI_PEPPER_CRATE.get()));
+        this.simpleBlock(EDBlocks.CRANBERRY_BAG.get(), this.existingModel(EDBlocks.CRANBERRY_BAG.get()));
 
         this.wildCropBlock(EDBlocks.WILD_ASPARAGUS.get());
         this.wildCropBlock(EDBlocks.WILD_SWEET_POTATO.get());
@@ -70,6 +106,7 @@ public class EDBlockStates extends BlockStateProvider {
         this.customStageBlock(EDBlocks.SWEET_POTATO_CROP.get(), this.mcLoc("crop"), "crop", EDCropBlock.AGE, Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7));
         this.customStageBlock(EDBlocks.CHILI_PEPPER_CROP.get(), this.mcLoc("crop"), "crop", EDCropBlock.AGE, Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7));
         this.customStageBlock(EDBlocks.PEANUT_CROP.get(), this.mcLoc("crop"), "crop", EDCropBlock.AGE, Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7));
+
     }
 
     public ConfiguredModel[] cubeRandomRotation(Block block, String suffix) {
@@ -95,7 +132,7 @@ public class EDBlockStates extends BlockStateProvider {
             int ageSuffix = state.getValue(ageProperty);
             String var10000 = this.blockName(block);
             String stageName = var10000 + "_stage" + ageSuffix;
-            return ConfiguredModel.builder().modelFile(((BlockModelBuilder)this.models().cross(stageName, this.resourceBlock(stageName))).renderType("cutout")).build();
+            return ConfiguredModel.builder().modelFile((this.models().cross(stageName, this.resourceBlock(stageName))).renderType("cutout")).build();
         }, ignored);
     }
 
@@ -104,8 +141,8 @@ public class EDBlockStates extends BlockStateProvider {
             int ageSuffix = (Integer)state.getValue(ageProperty);
             String var10000 = this.blockName(block);
             String stageName = var10000 + "_stage";
-            stageName = stageName + (suffixes.isEmpty() ? ageSuffix : (Integer)suffixes.get(Math.min(suffixes.size(), ageSuffix)));
-            return parent == null ? ConfiguredModel.builder().modelFile(((BlockModelBuilder)this.models().cross(stageName, this.resourceBlock(stageName))).renderType("cutout")).build() : ConfiguredModel.builder().modelFile(((BlockModelBuilder)this.models().singleTexture(stageName, parent, textureKey, this.resourceBlock(stageName))).renderType("cutout")).build();
+            stageName = stageName + (suffixes.isEmpty() ? ageSuffix : suffixes.get(Math.min(suffixes.size(), ageSuffix)));
+            return parent == null ? ConfiguredModel.builder().modelFile((this.models().cross(stageName, this.resourceBlock(stageName))).renderType("cutout")).build() : ConfiguredModel.builder().modelFile((this.models().singleTexture(stageName, parent, textureKey, this.resourceBlock(stageName))).renderType("cutout")).build();
         }, ignored);
     }
 
@@ -115,17 +152,24 @@ public class EDBlockStates extends BlockStateProvider {
 
     public void wildCropBlock(Block block, boolean isBushCrop) {
         if (isBushCrop) {
-            this.simpleBlock(block, ((BlockModelBuilder)this.models().singleTexture(this.blockName(block), this.resourceBlock("bush_crop"), "crop", this.resourceBlock(this.blockName(block)))).renderType("cutout"));
+            this.simpleBlock(block, (this.models().singleTexture(this.blockName(block), this.resourceBlock("bush_crop"), "crop", this.resourceBlock(this.blockName(block)))).renderType("cutout"));
         } else {
-            this.simpleBlock(block, ((BlockModelBuilder)this.models().cross(this.blockName(block), this.resourceBlock(this.blockName(block)))).renderType("cutout"));
+            this.simpleBlock(block, (this.models().cross(this.blockName(block), this.resourceBlock(this.blockName(block)))).renderType("cutout"));
         }
 
+    }
+
+    public void cabinetBlock(Block block, String woodType) {
+        this.horizontalBlock(block, (state) -> {
+            String suffix = state.getValue(CabinetBlock.OPEN) ? "_open" : "";
+            return this.models().orientable(this.blockName(block) + suffix, this.resourceBlock(woodType + "_cabinet_side"), this.resourceBlock(woodType + "_cabinet_front" + suffix), this.resourceBlock(woodType + "_cabinet_top"));
+        });
     }
 
     public void feastBlock(FeastBlock block) {
         this.getVariantBuilder(block).forAllStates((state) -> {
             IntegerProperty servingsProperty = block.getServingsProperty();
-            int servings = (Integer)state.getValue(servingsProperty);
+            int servings = state.getValue(servingsProperty);
             String suffix = "_stage" + (block.getMaxServings() - servings);
             if (servings == 0) {
                 suffix = block.hasLeftovers ? "_leftover" : "_stage" + (servingsProperty.getPossibleValues().toArray().length - 2);
@@ -133,7 +177,7 @@ public class EDBlockStates extends BlockStateProvider {
 
             ConfiguredModel.Builder var10000 = ConfiguredModel.builder();
             String var10002 = this.blockName(block);
-            return var10000.modelFile(this.existingModel(var10002 + suffix)).rotationY(((int)((Direction)state.getValue(FeastBlock.FACING)).toYRot() + 180) % 360).build();
+            return var10000.modelFile(this.existingModel(var10002 + suffix)).rotationY(((int)(state.getValue(FeastBlock.FACING)).toYRot() + 180) % 360).build();
         });
     }
 
@@ -142,20 +186,35 @@ public class EDBlockStates extends BlockStateProvider {
         BlockModelProvider var10001 = this.models();
         String var10002 = this.blockName(block) + "_bottom";
         String var10004 = this.blockName(block);
-        var10000 = ((VariantBlockStateBuilder)var10000.modelFile(((BlockModelBuilder)var10001.cross(var10002, this.resourceBlock(var10004 + "_bottom"))).renderType("cutout")).addModel()).partialState().with(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER).modelForState();
+        var10000 = ((VariantBlockStateBuilder)var10000.modelFile((var10001.cross(var10002, this.resourceBlock(var10004 + "_bottom"))).renderType("cutout")).addModel()).partialState().with(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER).modelForState();
         var10001 = this.models();
         var10002 = this.blockName(block) + "_top";
         var10004 = this.blockName(block);
-        var10000.modelFile(((BlockModelBuilder)var10001.cross(var10002, this.resourceBlock(var10004 + "_top"))).renderType("cutout")).addModel();
+        var10000.modelFile((var10001.cross(var10002, this.resourceBlock(var10004 + "_top"))).renderType("cutout")).addModel();
     }
 
     public void pieBlock(Block block) {
         this.getVariantBuilder(block).forAllStates((state) -> {
-            int bites = (Integer)state.getValue(PieBlock.BITES);
+            int bites = state.getValue(PieBlock.BITES);
             String suffix = bites > 0 ? "_slice" + bites : "";
             ConfiguredModel.Builder var10000 = ConfiguredModel.builder();
             String var10002 = this.blockName(block);
-            return var10000.modelFile(this.existingModel(var10002 + suffix)).rotationY(((int)((Direction)state.getValue(PieBlock.FACING)).toYRot() + 180) % 360).build();
+            return var10000.modelFile(this.existingModel(var10002 + suffix)).rotationY(((int)state.getValue(PieBlock.FACING).toYRot() + 180) % 360).build();
         });
+    }
+
+    private void saplingBlock(Block block) {
+        simpleBlock(block,
+                models().cross(BuiltInRegistries.BLOCK.getKey(block).getPath(), blockTexture(block)).renderType("cutout"));
+    }
+
+    private void leavesBlock(Block block) {
+        simpleBlockWithItem(block,
+                models().singleTexture(BuiltInRegistries.BLOCK.getKey(block).getPath(), ResourceLocation.parse("minecraft:block/leaves"),
+                        "all", blockTexture(block)).renderType("cutout"));
+    }
+
+    public void trapdoorItem(Block block, String appendix) {
+        simpleBlockItem(block, new ModelFile.UncheckedModelFile(ExpandedDelight.MODID + ":block/" + BuiltInRegistries.BLOCK.getKey(block).getPath() + appendix));
     }
 }

@@ -12,7 +12,10 @@ import net.minecraft.world.level.block.Block;
 
 public class EDTags {
 
+    public static final TagKey<Item> CINNAMON_LOGS = modItemTag("cinnamon_logs");
+
     public static final TagKey<Block> MILK_ACTIVATORS = modBlockTag("milk_activators");
+    public static final TagKey<Block> CINNAMON_LOGS_BLOCK = modBlockTag("cinnamon_logs");
 
     private static TagKey<Item> modItemTag(String path) {
         return ItemTags.create(ResourceLocation.fromNamespaceAndPath(ExpandedDelight.MODID, path));

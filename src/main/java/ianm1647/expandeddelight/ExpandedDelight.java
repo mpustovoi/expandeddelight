@@ -1,7 +1,6 @@
 package ianm1647.expandeddelight;
 
 import ianm1647.expandeddelight.common.registry.*;
-import ianm1647.expandeddelight.common.world.EDWorldGen;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
@@ -28,9 +27,13 @@ public class ExpandedDelight
         EDRecipeTypes.RECIPE_TYPES.register(modEventBus);
         EDRecipeSerializers.RECIPE_SERIALIZERS.register(modEventBus);
         EDTabs.CREATIVE_TABS.register(modEventBus);
-        EDWorldGen.load();
+        EDEntityTypes.ENTITIES.register(modEventBus);
+
+        EDWoodTypes.register();
         NeoForge.EVENT_BUS.register(this);
     }
+
+
 
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event)

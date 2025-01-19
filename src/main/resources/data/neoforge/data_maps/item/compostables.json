@@ -18,6 +18,9 @@
     "expandeddelight:peanut": {
       "chance": 0.65
     },
+    "expandeddelight:cranberries": {
+      "chance": 0.65
+    },
     "expandeddelight:chocolate_cookie": {
       "chance": 0.85
     },

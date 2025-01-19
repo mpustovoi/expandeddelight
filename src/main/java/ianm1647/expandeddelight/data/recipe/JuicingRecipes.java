@@ -40,6 +40,11 @@ public class JuicingRecipes {
                 .addIngredient(Items.SUGAR)
                 .unlockedByItems("has_berries", Items.GLOW_BERRIES)
                 .setRecipeBookTab(JuicerRecipeBookTab.DRINKS).build(output);
+        JuicerRecipeBuilder.juicerRecipe(EDItems.CRANBERRY_JUICE.get(), 1, 200, 1.0f, Items.GLASS_BOTTLE)
+                .addIngredient(EDItems.CRANBERRIES.get())
+                .addIngredient(Items.SUGAR)
+                .unlockedByItems("has_berries", EDItems.CRANBERRIES.get())
+                .setRecipeBookTab(JuicerRecipeBookTab.DRINKS).build(output);
     }
 
     private static void juiceMiscellaneous(RecipeOutput output) {

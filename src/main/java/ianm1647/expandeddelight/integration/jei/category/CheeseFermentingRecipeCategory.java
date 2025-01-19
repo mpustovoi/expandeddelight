@@ -40,13 +40,17 @@ public class CheeseFermentingRecipeCategory implements IRecipeCategory<CheeseFer
     private final IDrawable slotIcon;
     private final IDrawable icon;
     private final ItemStack milkCask;
+    private final ItemStack goatMilkCask;
     private final ItemStack cheeseCask;
+    private final ItemStack goatCheeseCask;
 
     public CheeseFermentingRecipeCategory(IGuiHelper helper) {
-        ResourceLocation backgroundImage = ResourceLocation.fromNamespaceAndPath("farmersdelight", "textures/gui/jei/decomposition.png");
+        ResourceLocation backgroundImage = ResourceLocation.fromNamespaceAndPath("expandeddelight", "textures/gui/jei/fermenting.png");
         this.background = helper.createDrawable(backgroundImage, 0, 0, 118, 80);
         this.milkCask = new ItemStack(EDBlocks.MILK_CASK.get());
         this.cheeseCask = new ItemStack(EDItems.CHEESE_WHEEL.get(), 2);
+        this.goatMilkCask = new ItemStack(EDBlocks.GOAT_MILK_CASK.get());
+        this.goatCheeseCask = new ItemStack(EDItems.GOAT_CHEESE_WHEEL.get(), 2);
         this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(EDItems.CASK.get()));
         this.slotIcon = helper.createDrawable(backgroundImage, 119, 0, 22, 22);
     }
@@ -74,8 +78,9 @@ public class CheeseFermentingRecipeCategory implements IRecipeCategory<CheeseFer
                 accelerators.add(new ItemStack(f.value()));
             });
         });
-        builder.addSlot(RecipeIngredientRole.INPUT, 9, 26).addItemStack(this.milkCask);
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 93, 26).addItemStack(this.cheeseCask);
+
+        builder.addSlot(RecipeIngredientRole.INPUT, 9, 26).addItemStack(this.milkCask).addItemStack(this.goatMilkCask);
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 93, 26).addItemStack(this.cheeseCask).addItemStack(this.goatCheeseCask);
         builder.addSlot(RecipeIngredientRole.RENDER_ONLY, 64, 54).addItemStacks(accelerators);
     }
 

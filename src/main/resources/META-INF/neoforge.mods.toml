@@ -13,6 +13,9 @@ description='''${mod_description}'''
 
 enumExtensions="META-INF/enumextensions.json"
 
+[[mixins]]
+config = "expandeddelight.mixins.json"
+
 [[dependencies.${mod_id}]]
     modId="neoforge"
     type="required"

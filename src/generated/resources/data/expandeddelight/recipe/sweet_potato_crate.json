@@ -1,15 +1,34 @@
 {
-  "type": "minecraft:crafting_shaped",
+  "type": "minecraft:crafting_shapeless",
   "category": "building",
-  "key": {
-    "#": {
+  "ingredients": [
+    {
+      "item": "expandeddelight:sweet_potato"
+    },
+    {
+      "item": "expandeddelight:sweet_potato"
+    },
+    {
+      "item": "expandeddelight:sweet_potato"
+    },
+    {
+      "item": "expandeddelight:sweet_potato"
+    },
+    {
+      "item": "expandeddelight:sweet_potato"
+    },
+    {
+      "item": "expandeddelight:sweet_potato"
+    },
+    {
+      "item": "expandeddelight:sweet_potato"
+    },
+    {
+      "item": "expandeddelight:sweet_potato"
+    },
+    {
       "item": "expandeddelight:sweet_potato"
     }
-  },
-  "pattern": [
-    "###",
-    "###",
-    "###"
   ],
   "result": {
     "count": 1,

@@ -51,6 +51,7 @@ public class JEIPlugin implements IModPlugin {
       registration.addIngredientInfo(List.of(new ItemStack(EDItems.WILD_SWEET_POTATO.get()), new ItemStack(EDItems.SWEET_POTATO.get())), VanillaTypes.ITEM_STACK, Component.translatable("expandeddelight.jei.info.wild_sweet_potato"));
       registration.addIngredientInfo(List.of(new ItemStack(EDItems.WILD_CHILI_PEPPER.get()), new ItemStack(EDItems.CHILI_PEPPER.get())), VanillaTypes.ITEM_STACK, Component.translatable("expandeddelight.jei.info.wild_chili_pepper"));
       registration.addIngredientInfo(List.of(new ItemStack(EDItems.WILD_PEANUTS.get()), new ItemStack(EDItems.PEANUT.get())), VanillaTypes.ITEM_STACK, Component.translatable("expandeddelight.jei.info.wild_peanuts"));
+      registration.addIngredientInfo(List.of(new ItemStack(EDItems.CRANBERRIES.get())), VanillaTypes.ITEM_STACK, Component.translatable("expandeddelight.jei.info.cranberries"));
       registration.addIngredientInfo(List.of(new ItemStack(EDItems.SALT_ORE.get()), new ItemStack(EDItems.DEEPSLATE_SALT_ORE.get())), VanillaTypes.ITEM_STACK, Component.translatable("expandeddelight.jei.info.salt_ore"));
 
    }

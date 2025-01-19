@@ -1,6 +1,7 @@
 package ianm1647.expandeddelight.common.block;
 
 import ianm1647.expandeddelight.common.registry.EDBlocks;
+import ianm1647.expandeddelight.common.registry.EDItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -32,6 +33,15 @@ public class CaskBlock extends Block {
             level.playSound(player, pos, SoundEvents.BUCKET_EMPTY, SoundSource.BLOCKS, 1.0F, 1.0F);
             return ItemInteractionResult.SUCCESS;
         }
-        return ItemInteractionResult.SUCCESS;
+        if (mainHand.is(EDItems.GOAT_MILK_BUCKET.get())) {
+            if(!player.isCreative()) {
+                mainHand.shrink(1);
+                player.setItemInHand(hand, Items.BUCKET.getDefaultInstance());
+            }
+            level.setBlock(pos, EDBlocks.GOAT_MILK_CASK.get().defaultBlockState(), 2);
+            level.playSound(player, pos, SoundEvents.BUCKET_EMPTY, SoundSource.BLOCKS, 1.0F, 1.0F);
+            return ItemInteractionResult.SUCCESS;
+        }
+        return ItemInteractionResult.FAIL;
     }
 }

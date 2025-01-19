@@ -1,11 +1,13 @@
 package ianm1647.expandeddelight.common.event;
 
+import ianm1647.expandeddelight.ExpandedDelight;
 import ianm1647.expandeddelight.common.registry.EDItems;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
+import net.minecraft.world.entity.npc.VillagerType;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
@@ -19,10 +21,11 @@ import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 
 @EventBusSubscriber(
-        modid = "expandeddelight"
+        modid = ExpandedDelight.MODID
 )
 @ParametersAreNonnullByDefault
 public class EDVillagerEvents {
+
     public EDVillagerEvents() {
     }
 

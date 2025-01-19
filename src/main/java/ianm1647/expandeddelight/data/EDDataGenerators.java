@@ -10,7 +10,6 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
-import vectorwing.farmersdelight.data.ItemModels;
 
 import java.util.Collections;
 import java.util.List;
@@ -37,6 +36,8 @@ public class EDDataGenerators {
         generator.addProvider(event.includeServer(), new EDAdvancements(output, lookupProvider, helper));
         generator.addProvider(event.includeServer(), new LootTableProvider(output, Collections.emptySet(), List.of(new LootTableProvider.SubProviderEntry(EDBlockLoot::new, LootContextParamSets.BLOCK)), lookupProvider));
         EDBlockStates blockStates = new EDBlockStates(output, helper);
+        EDItemModels itemModels = new EDItemModels(output, helper);
         generator.addProvider(event.includeClient(), blockStates);
+        generator.addProvider(event.includeClient(), itemModels);
     }
 }
