@@ -1,4 +1,4 @@
-package ianm1647.expandeddelight.common.block.grower;
+package ianm1647.expandeddelight.common.world.tree;
 
 import ianm1647.expandeddelight.ExpandedDelight;
 import ianm1647.expandeddelight.common.world.EDConfiguredFeatures;

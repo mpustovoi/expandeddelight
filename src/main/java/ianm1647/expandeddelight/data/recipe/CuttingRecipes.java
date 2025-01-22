@@ -1,9 +1,10 @@
 package ianm1647.expandeddelight.data.recipe;
 
 import ianm1647.expandeddelight.common.registry.EDItems;
+import ianm1647.expandeddelight.common.tag.EDTags;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.packs.resources.Resource;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import vectorwing.farmersdelight.common.tag.CommonTags;
@@ -18,12 +19,14 @@ public class CuttingRecipes {
     }
 
     private static void crushingMaterials(RecipeOutput output) {
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.SUGAR_CANE), Ingredient.of(EDItems.CRUSHING_MALLET.get()), Items.SUGAR, 2).save(output, ResourceLocation.fromNamespaceAndPath("expandeddelight", "sugar_cane"));
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(EDItems.SALT_ROCK.get()), Ingredient.of(EDItems.CRUSHING_MALLET.get()), EDItems.SALT.get(), 2).save(output);
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(EDItems.CINNAMON_STICK.get()), Ingredient.of(EDItems.CRUSHING_MALLET.get()), EDItems.CINNAMON.get(), 2).save(output);
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.BLAZE_ROD), Ingredient.of(EDItems.CRUSHING_MALLET.get()), Items.BLAZE_POWDER, 3).save(output);
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.BONE), Ingredient.of(EDItems.CRUSHING_MALLET.get()), Items.BONE_MEAL, 4).save(output);
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(EDItems.CINNAMON_LOG.get()), Ingredient.of(ItemTags.AXES), EDItems.CINNAMON_STICK.get(), 4).addResult(EDItems.CINNAMON_STRIPPED_LOG.get()).save(output);
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(EDItems.CINNAMON_WOOD.get()), Ingredient.of(ItemTags.AXES), EDItems.CINNAMON_STICK.get(), 6).addResult(EDItems.CINNAMON_STRIPPED_WOOD.get()).save(output);
 
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.SUGAR_CANE), Ingredient.of(EDTags.CRUSHING_TOOLS), Items.SUGAR, 2).addResultWithChance(Items.SUGAR, 0.15f).save(output, ResourceLocation.fromNamespaceAndPath("expandeddelight", "sugar_cane"));
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(EDItems.SALT_ROCK.get()), Ingredient.of(EDTags.CRUSHING_TOOLS), EDItems.SALT.get(), 2).addResultWithChance(EDItems.SALT.get(), 0.15f).save(output);
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(EDItems.CINNAMON_STICK.get()), Ingredient.of(EDTags.CRUSHING_TOOLS), EDItems.CINNAMON.get(), 2).addResultWithChance(EDItems.CINNAMON.get(), 0.15f).save(output);
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.BLAZE_ROD), Ingredient.of(EDTags.CRUSHING_TOOLS), Items.BLAZE_POWDER, 3).addResultWithChance(Items.BLAZE_POWDER, 0.15f).save(output);
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.BONE), Ingredient.of(EDTags.CRUSHING_TOOLS), Items.BONE_MEAL, 4).addResultWithChance(Items.BONE_MEAL, 0.15f).save(output);
 
     }
 

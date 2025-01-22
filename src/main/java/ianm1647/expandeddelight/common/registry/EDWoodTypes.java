@@ -4,9 +4,10 @@ import ianm1647.expandeddelight.ExpandedDelight;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 public class EDWoodTypes {
-
     public static WoodType CINNAMON;
     public static BlockSetType CINNAMON_SET;
 

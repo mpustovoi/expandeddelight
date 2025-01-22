@@ -1,6 +1,7 @@
 package ianm1647.expandeddelight;
 
 import ianm1647.expandeddelight.common.registry.*;
+import ianm1647.expandeddelight.common.world.tree.EDTreePlacers;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
@@ -29,6 +30,7 @@ public class ExpandedDelight
         EDTabs.CREATIVE_TABS.register(modEventBus);
         EDEntityTypes.ENTITIES.register(modEventBus);
 
+        EDTreePlacers.FOLIAGE_PLACERS.register(modEventBus);
         EDWoodTypes.register();
         NeoForge.EVENT_BUS.register(this);
     }

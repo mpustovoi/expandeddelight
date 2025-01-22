@@ -1,10 +1,15 @@
 package ianm1647.expandeddelight.common.world;
 
 import ianm1647.expandeddelight.ExpandedDelight;
+import ianm1647.expandeddelight.common.registry.EDBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
+import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.levelgen.VerticalAnchor;
+import net.minecraft.world.level.levelgen.placement.HeightRangePlacement;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 public class EDPlacedFeatures {
@@ -21,7 +26,14 @@ public class EDPlacedFeatures {
     public static ResourceKey<PlacedFeature> PATCH_CRANBERRIES;
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
+        var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
+        context.register(SALT_ORE, new PlacedFeature(configuredFeatures.getOrThrow(EDConfiguredFeatures.SALT_ORE),
+                OrePlacement.commonOrePlacement(6, HeightRangePlacement.uniform(VerticalAnchor.absolute(-20), VerticalAnchor.absolute(60)))));
+
+        context.register(CINNAMON_TREE, new PlacedFeature(configuredFeatures.getOrThrow(EDConfiguredFeatures.CINNAMON_TREE),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2),
+                        EDBlocks.CINNAMON_SAPLING.get())));
     }
 
     static {

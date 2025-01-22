@@ -11,9 +11,16 @@
         "count": 3,
         "id": "minecraft:blaze_powder"
       }
+    },
+    {
+      "chance": 0.15,
+      "item": {
+        "count": 1,
+        "id": "minecraft:blaze_powder"
+      }
     }
   ],
   "tool": {
-    "item": "expandeddelight:crushing_mallet"
+    "tag": "expandeddelight:crushing_tools"
   }
 }

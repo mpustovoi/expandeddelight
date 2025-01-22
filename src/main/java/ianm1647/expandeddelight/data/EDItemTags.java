@@ -40,6 +40,8 @@ public class EDItemTags extends ItemTagsProvider {
                 EDItems.CINNAMON_WOOD.get(),
                 EDItems.CINNAMON_STRIPPED_LOG.get(),
                 EDItems.CINNAMON_STRIPPED_WOOD.get());
+        tag(EDTags.CRUSHING_TOOLS).add(
+                EDItems.CRUSHING_MALLET.get());
     }
 
     private void registerDelightTags() {

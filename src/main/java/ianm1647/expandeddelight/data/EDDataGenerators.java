@@ -39,5 +39,7 @@ public class EDDataGenerators {
         EDItemModels itemModels = new EDItemModels(output, helper);
         generator.addProvider(event.includeClient(), blockStates);
         generator.addProvider(event.includeClient(), itemModels);
+
+        generator.addProvider(event.includeServer(), new EDPackProvider(output, lookupProvider));
     }
 }

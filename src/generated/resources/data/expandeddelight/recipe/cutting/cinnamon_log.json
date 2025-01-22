@@ -2,25 +2,24 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "item": "expandeddelight:salt_rock"
+      "item": "expandeddelight:cinnamon_log"
     }
   ],
   "result": [
     {
       "item": {
-        "count": 2,
-        "id": "expandeddelight:salt"
+        "count": 4,
+        "id": "expandeddelight:cinnamon_stick"
       }
     },
     {
-      "chance": 0.15,
       "item": {
         "count": 1,
-        "id": "expandeddelight:salt"
+        "id": "expandeddelight:stripped_cinnamon_log"
       }
     }
   ],
   "tool": {
-    "tag": "expandeddelight:crushing_tools"
+    "tag": "minecraft:axes"
   }
 }

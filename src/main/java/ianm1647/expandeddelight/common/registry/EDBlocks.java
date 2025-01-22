@@ -2,18 +2,14 @@ package ianm1647.expandeddelight.common.registry;
 
 import ianm1647.expandeddelight.ExpandedDelight;
 import ianm1647.expandeddelight.common.block.*;
+import ianm1647.expandeddelight.common.world.tree.EDTreeGrowers;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.grower.TreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
-import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import vectorwing.farmersdelight.common.block.CabinetBlock;
 import vectorwing.farmersdelight.common.block.PieBlock;
 import vectorwing.farmersdelight.common.block.WildCropBlock;
 
@@ -80,7 +76,7 @@ public class EDBlocks {
         BLOCKS = DeferredRegister.create(Registries.BLOCK, ExpandedDelight.MODID);
 
         CINNAMON_SAPLING = BLOCKS.register("cinnamon_sapling",
-                () -> new SaplingBlock(TreeGrower.OAK, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
+                () -> new SaplingBlock(EDTreeGrowers.CINNAMON, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
         CINNAMON_LEAVES = BLOCKS.register("cinnamon_leaves",
                 () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)));
         CINNAMON_LOG = BLOCKS.register("cinnamon_log",
