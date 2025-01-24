@@ -128,7 +128,6 @@ public class EDBlocks {
         GOAT_CHEESE_WHEEL = BLOCKS.register("goat_cheese_wheel",
                 () -> new PieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), EDItems.GOAT_CHEESE_SLICE));
 
-
         ASPARAGUS_CRATE = BLOCKS.register("asparagus_crate",
                 () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
         SWEET_POTATO_CRATE = BLOCKS.register("sweet_potato_crate",
@@ -137,7 +136,6 @@ public class EDBlocks {
                 () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
         CRANBERRY_BAG = BLOCKS.register("cranberry_bag",
                 () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.RED_WOOL)));
-
 
         WILD_ASPARAGUS  = BLOCKS.register("wild_asparagus",
                 () -> new WildCropBlock(MobEffects.ABSORPTION, 6, BlockBehaviour.Properties.ofFullCopy(Blocks.TALL_GRASS)));
